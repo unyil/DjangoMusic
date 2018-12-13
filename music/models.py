@@ -27,7 +27,7 @@ class Profile(models.Model):
         ('Male', 'Male'),
         ('Female', 'Female'),
     )
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True,)
     birthdate = models.DateField(null=True, blank=True)
     gender = models.CharField(max_length=10, choices=gender_choices, default='Male')
     address = models.TextField()
